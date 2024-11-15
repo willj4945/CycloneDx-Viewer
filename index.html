@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBOM Visualization</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+</head>
+<body>
+
+    <div class="container">
+        <h1>SBOM Visualization</h1>
+
+        <!-- File upload input -->
+        <div class="upload-container">
+            <label for="sbom-upload">Upload your SBOM JSON file:</label>
+            <input type="file" id="sbom-upload" accept=".json">
+        </div>
+
+        <!-- Search bar -->
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search components...">
+
+            <button id="download-csv" class="download-btn">Download CSV</button>
+
+        </div>
+
+        <!-- Metadata display -->
+        <div id="metadata"></div>
+
+        <!-- Components Table -->
+        <div class="header">Components</div>
+        <table id="components-table">
+            <thead>
+                <tr>
+                    <th data-sortable="true">Name</th>
+                    <th data-sortable="true">Version</th>
+                    <th data-sortable="true">Description</th>
+                    <th data-sortable="true">Type</th>
+                    <th data-sortable="true">Bom-ref</th>
+                    <th data-sortable="true">License</th>
+                    <th>External References</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Components will be dynamically inserted here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script> <!-- Link to external JS -->
+</body>
+</html>

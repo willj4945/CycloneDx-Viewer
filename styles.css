@@ -1,0 +1,136 @@
+/* General container styling */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Ensure the table fits within the screen width */
+#components-table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto; /* Allow horizontal scrolling for wide tables */
+    table-layout: fixed; /* Ensure columns are evenly spaced */
+}
+
+/* Styling for table headers */
+table th {
+    cursor: pointer; /* Indicate that table headers are clickable */
+    background-color: #f2f2f2;
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* Responsive search container */
+.search-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#search-input {
+    padding: 10px;
+    width: 100%;
+    max-width: 400px; /* Limit width on larger screens */
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Table cell styling */
+table th, table td {
+    padding: 12px;
+    text-align: left;
+}
+
+/* Add striped rows for better readability */
+table tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+/* Column sorting arrows */
+table th.sorted-asc::after {
+    content: ' ↑'; /* Add an up arrow for ascending order */
+}
+
+table th.sorted-desc::after {
+    content: ' ↓'; /* Add a down arrow for descending order */
+}
+
+/* Mobile-friendly layout */
+@media (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+        display: block; /* Make table elements block-level for better stacking */
+        width: 100%;
+    }
+
+    table {
+        border: 0; /* Remove border for mobile view */
+    }
+
+    table th {
+        background-color: #f0f0f0;
+        font-weight: bold;
+        padding: 10px;
+        text-align: center;
+    }
+
+    table td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 5px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    /* Add "show more" labels for each cell in mobile view */
+    table td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        margin-right: 10px;
+        flex-basis: 30%;
+    }
+
+    /* Make search input full width */
+    #search-input {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* On very small screens, stack the columns in a more readable way */
+    table td {
+        font-size: 0.9rem; /* Slightly smaller text for small screens */
+    }
+
+    table th, table td {
+        padding: 8px;
+    }
+}
+
+/* Style the download button */
+.download-btn {
+    padding: 12px 24px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    display: block;
+    width: 200px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for download button */
+.download-btn:hover {
+    background-color: #45a049;
+}
+
+.download-btn:focus {
+    outline: none;
+}
